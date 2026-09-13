@@ -26,19 +26,19 @@
     }
 
     # Organizational Units created under the domain root
-    OrganizationalUnits = @('Infrastructure', 'Applications', 'Servers', 'Workstations')
+    OrganizationalUnits = @('IT-Infrastructure', 'Applications', 'Servers', 'Workstations')
 
     # Departments that get a security group + file share
-    DepartmentGroups = @('Infrastructure', 'Applications')
+    DepartmentGroups = @('IT-Infrastructure', 'Applications')
 
     # Team members: Name = the OU / department they belong to
     Users = @(
         # ── Infrastructure team ──
-        @{ First = 'Saeed';      Last = 'Almalki';    OU = 'Infrastructure'; Title = 'IT Infrastructure Manager' }
-        @{ First = 'Abdulmalik'; Last = 'Alowaimer';  OU = 'Infrastructure'; Title = 'Infrastructure Engineer' }
-        @{ First = 'Mohammed';   Last = 'Alkhayat';   OU = 'Infrastructure'; Title = 'Infrastructure Engineer' }
-        @{ First = 'Nawaf';      Last = 'Alshahrani'; OU = 'Infrastructure'; Title = 'Infrastructure Engineer' }
-        @{ First = 'Naif';       Last = 'Alshehri';   OU = 'Infrastructure'; Title = 'Infrastructure Engineer' }
+        @{ First = 'Saeed';      Last = 'Almalki';    OU = 'IT-Infrastructure'; Title = 'IT Infrastructure Manager' }
+        @{ First = 'Abdulmalik'; Last = 'Alowaimer';  OU = 'IT-Infrastructure'; Title = 'Infrastructure Engineer' }
+        @{ First = 'Mohammed';   Last = 'Alkhayat';   OU = 'IT-Infrastructure'; Title = 'Infrastructure Engineer' }
+        @{ First = 'Nawaf';      Last = 'Alshahrani'; OU = 'IT-Infrastructure'; Title = 'Infrastructure Engineer' }
+        @{ First = 'Naif';       Last = 'Alshehri';   OU = 'IT-Infrastructure'; Title = 'Infrastructure Engineer' }
         # ── Applications team ──
         @{ First = 'Mohammed';   Last = 'Aldossari';  OU = 'Applications';   Title = 'Applications Engineer' }
         @{ First = 'Deemah';     Last = 'Alqahtani';  OU = 'Applications';   Title = 'Applications Engineer' }
@@ -46,7 +46,7 @@
 
     # File-server shares:  Name = ACL group that gets Modify
     Shares = @(
-        @{ Name = 'Infra-Share'; Path = 'C:\Shares\Infrastructure'; Group = 'Infrastructure' }
+        @{ Name = 'Infra-Share'; Path = 'C:\Shares\Infrastructure'; Group = 'IT-Infrastructure' }
         @{ Name = 'Apps-Share';  Path = 'C:\Shares\Applications';    Group = 'Applications' }
     )
 
