@@ -1,0 +1,10 @@
+# Deployment state
+.stage1-done
+
+# Local secrets / overrides
+config/*.local.psd1
+
+# OS noise
+Thumbs.db
+desktop.ini
+*.log

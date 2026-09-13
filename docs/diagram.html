@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { width:1200px; font-family:"Segoe UI",sans-serif; background:#0b1220; color:#e5e7eb; padding:44px 40px; }
+  .head { text-align:center; margin-bottom:34px; }
+  .head h1 { font-size:30px; color:#fff; letter-spacing:.3px; }
+  .head p { color:#7dd3fc; margin-top:8px; font-size:16px; }
+  .grid { display:flex; gap:22px; align-items:stretch; }
+  .col { flex:1; display:flex; flex-direction:column; gap:16px; }
+  .card { background:#111a2e; border:1px solid #1e2b47; border-radius:14px; padding:18px 18px; }
+  .card h3 { font-size:16px; color:#fff; display:flex; align-items:center; gap:9px; }
+  .card .role { font-size:12.5px; color:#93c5fd; margin-top:3px; }
+  .card ul { list-style:none; margin-top:11px; display:flex; flex-direction:column; gap:7px; }
+  .card li { font-size:13px; color:#cbd5e1; padding-left:16px; position:relative; }
+  .card li::before { content:"▸"; position:absolute; left:0; color:#38bdf8; }
+  .dot { width:11px; height:11px; border-radius:50%; }
+  .dc { background:#38bdf8; } .svc { background:#34d399; } .obj { background:#fbbf24; }
+  .badge { display:inline-block; background:#0e7490; color:#e0f2fe; font-size:11px; padding:3px 10px; border-radius:20px; margin-top:6px; }
+  .flow { text-align:center; color:#64748b; font-size:13px; margin-top:28px; letter-spacing:.5px; }
+  .footer { display:flex; justify-content:space-between; margin-top:26px; padding-top:16px; border-top:1px solid #1e2b47; font-size:12.5px; color:#64748b; }
+  .footer b { color:#7dd3fc; }
+</style></head>
+<body>
+  <div class="head">
+    <h1>Enterprise Windows Lab — Automated AD Environment</h1>
+    <p>corp.lab · deployed from code on Hyper-V · Infrastructure as Code</p>
+  </div>
+
+  <div class="grid">
+    <div class="col">
+      <div class="card" style="border-color:#38bdf8;">
+        <h3><span class="dot dc"></span> Domain Controller</h3>
+        <div class="role">Windows Server · 10.10.10.10 (static)</div>
+        <ul><li>Active Directory Domain Services</li><li>DNS (AD-integrated + forwarder)</li><li>Forest / domain level 2016+</li></ul>
+        <span class="badge">Install-ADDSForest</span>
+      </div>
+      <div class="card">
+        <h3><span class="dot svc"></span> DHCP</h3>
+        <div class="role">Authorized in AD</div>
+        <ul><li>Scope 10.10.10.100–200</li><li>Router + DNS + domain options</li><li>8-day leases</li></ul>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card">
+        <h3><span class="dot obj"></span> Identity &amp; Policy</h3>
+        <div class="role">Active Directory objects</div>
+        <ul>
+          <li>OUs: IT · HR · Finance · Servers · Workstations</li>
+          <li>Security group per department</li>
+          <li>Demo users auto-placed &amp; grouped</li>
+          <li>GPO: password/lockout baseline</li>
+          <li>GPO: workstation standardization</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card">
+        <h3><span class="dot svc"></span> File Server</h3>
+        <div class="role">FS-FileServer role</div>
+        <ul>
+          <li>IT-Share · HR-Share · Finance-Share</li>
+          <li>Least-privilege NTFS + SMB</li>
+          <li>Dept group = Modify · others = none</li>
+        </ul>
+      </div>
+      <div class="card" style="border-color:#34d399;">
+        <h3><span class="dot dc"></span> Members / Clients</h3>
+        <div class="role">Servers &amp; Workstations OUs</div>
+        <ul><li>DNS → DC, then domain join</li><li>Receive GPOs automatically</li></ul>
+        <span class="badge">06-Join-Domain.ps1</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="flow">config/lab-config.psd1  →  Deploy-Lab.ps1  →  Test-Lab.ps1  ✓</div>
+
+  <div class="footer">
+    <span>Skills: <b>AD · DNS · DHCP · GPO · File Services · PowerShell · IaC</b></span>
+    <span>Saeed Almalki — IT Infrastructure &amp; Systems Engineer</span>
+  </div>
+</body></html>
