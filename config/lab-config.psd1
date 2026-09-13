@@ -33,15 +33,15 @@
 
     # Team members: Name = the OU / department they belong to
     Users = @(
-        # ── Infrastructure team ──
-        @{ First = 'Saeed';      Last = 'Almalki';    OU = 'IT-Infrastructure'; Title = 'IT Infrastructure Manager' }
-        @{ First = 'Abdulmalik'; Last = 'Alowaimer';  OU = 'IT-Infrastructure'; Title = 'Infrastructure Engineer' }
-        @{ First = 'Mohammed';   Last = 'Alkhayat';   OU = 'IT-Infrastructure'; Title = 'Infrastructure Engineer' }
-        @{ First = 'Nawaf';      Last = 'Alshahrani'; OU = 'IT-Infrastructure'; Title = 'Infrastructure Engineer' }
-        @{ First = 'Naif';       Last = 'Alshehri';   OU = 'IT-Infrastructure'; Title = 'Infrastructure Engineer' }
+        # ── IT-Infrastructure team ──
+        @{ First = 'Saeed';    Last = 'Almalki'; OU = 'IT-Infrastructure'; Title = 'IT Infrastructure Manager' }
+        @{ First = 'Mohammed'; Last = '';        OU = 'IT-Infrastructure'; Title = 'Infrastructure Engineer' }
+        @{ First = 'Sami';     Last = '';        OU = 'IT-Infrastructure'; Title = 'Infrastructure Engineer' }
+        @{ First = 'Noor';     Last = '';        OU = 'IT-Infrastructure'; Title = 'Infrastructure Engineer' }
+        @{ First = 'Muhannad'; Last = '';        OU = 'IT-Infrastructure'; Title = 'Infrastructure Engineer' }
         # ── Applications team ──
-        @{ First = 'Mohammed';   Last = 'Aldossari';  OU = 'Applications';   Title = 'Applications Engineer' }
-        @{ First = 'Deemah';     Last = 'Alqahtani';  OU = 'Applications';   Title = 'Applications Engineer' }
+        @{ First = 'Suha';     Last = '';        OU = 'Applications';      Title = 'Applications Engineer' }
+        @{ First = 'Abdullah'; Last = '';        OU = 'Applications';      Title = 'Applications Engineer' }
     )
 
     # File-server shares:  Name = ACL group that gets Modify

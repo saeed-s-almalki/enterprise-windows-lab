@@ -30,7 +30,7 @@ foreach ($ou in $cfg.OrganizationalUnits) {
 $securePwd = ConvertTo-SecureString $cfg.DefaultUserPassword -AsPlainText -Force
 
 foreach ($u in $cfg.Users) {
-    $sam = ('{0}.{1}' -f $u.First, $u.Last).ToLower()
+    $sam = ((@($u.First, $u.Last) | Where-Object { $_ }) -join '.').ToLower()
     $upn = "$sam@$($cfg.Domain.Name)"
     if (-not (Get-ADUser -Filter "SamAccountName -eq '$sam'" -ErrorAction SilentlyContinue)) {
         New-ADUser `
