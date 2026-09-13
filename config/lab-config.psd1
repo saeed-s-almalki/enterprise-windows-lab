@@ -46,8 +46,8 @@
 
     # File-server shares:  Name = ACL group that gets Modify
     Shares = @(
-        @{ Name = 'Infra-Share'; Path = 'D:\Shares\Infrastructure'; Group = 'Infrastructure' }
-        @{ Name = 'Apps-Share';  Path = 'D:\Shares\Applications';    Group = 'Applications' }
+        @{ Name = 'Infra-Share'; Path = 'C:\Shares\Infrastructure'; Group = 'Infrastructure' }
+        @{ Name = 'Apps-Share';  Path = 'C:\Shares\Applications';    Group = 'Applications' }
     )
 
     # Default password for demo accounts (lab only — change/rotate in prod)
