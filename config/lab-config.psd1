@@ -26,21 +26,28 @@
     }
 
     # Organizational Units created under the domain root
-    OrganizationalUnits = @('IT', 'HR', 'Finance', 'Servers', 'Workstations')
+    OrganizationalUnits = @('Infrastructure', 'Applications', 'Servers', 'Workstations')
 
-    # Demo users: Name = the OU they belong to
+    # Departments that get a security group + file share
+    DepartmentGroups = @('Infrastructure', 'Applications')
+
+    # Team members: Name = the OU / department they belong to
     Users = @(
-        @{ First = 'Sara';  Last = 'Admin';   OU = 'IT';      Title = 'Systems Engineer' }
-        @{ First = 'Omar';  Last = 'Hassan';  OU = 'HR';      Title = 'HR Specialist' }
-        @{ First = 'Layla'; Last = 'Nasser';  OU = 'Finance'; Title = 'Accountant' }
-        @{ First = 'Faisal';Last = 'Otaibi';  OU = 'IT';      Title = 'Help Desk' }
+        # ── Infrastructure team ──
+        @{ First = 'Saeed';      Last = 'Almalki';    OU = 'Infrastructure'; Title = 'IT Infrastructure Manager' }
+        @{ First = 'Abdulmalik'; Last = 'Alowaimer';  OU = 'Infrastructure'; Title = 'Infrastructure Engineer' }
+        @{ First = 'Mohammed';   Last = 'Alkhayat';   OU = 'Infrastructure'; Title = 'Infrastructure Engineer' }
+        @{ First = 'Nawaf';      Last = 'Alshahrani'; OU = 'Infrastructure'; Title = 'Infrastructure Engineer' }
+        @{ First = 'Naif';       Last = 'Alshehri';   OU = 'Infrastructure'; Title = 'Infrastructure Engineer' }
+        # ── Applications team ──
+        @{ First = 'Mohammed';   Last = 'Aldossari';  OU = 'Applications';   Title = 'Applications Engineer' }
+        @{ First = 'Deemah';     Last = 'Alqahtani';  OU = 'Applications';   Title = 'Applications Engineer' }
     )
 
     # File-server shares:  Name = ACL group that gets Modify
     Shares = @(
-        @{ Name = 'IT-Share';      Path = 'D:\Shares\IT';      Group = 'IT' }
-        @{ Name = 'HR-Share';      Path = 'D:\Shares\HR';      Group = 'HR' }
-        @{ Name = 'Finance-Share'; Path = 'D:\Shares\Finance'; Group = 'Finance' }
+        @{ Name = 'Infra-Share'; Path = 'D:\Shares\Infrastructure'; Group = 'Infrastructure' }
+        @{ Name = 'Apps-Share';  Path = 'D:\Shares\Applications';    Group = 'Applications' }
     )
 
     # Default password for demo accounts (lab only — change/rotate in prod)

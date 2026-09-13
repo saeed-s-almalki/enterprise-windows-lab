@@ -18,8 +18,8 @@ foreach ($ou in $cfg.OrganizationalUnits) {
         New-ADOrganizationalUnit -Name $ou -Path $base -ProtectedFromAccidentalDeletion $true
         Write-Host "  + OU created: $ou" -ForegroundColor Green
     }
-    # One security group per department (skip infra OUs)
-    if ($ou -in @('IT','HR','Finance')) {
+    # One security group per department (from config)
+    if ($ou -in $cfg.DepartmentGroups) {
         if (-not (Get-ADGroup -Filter "Name -eq '$ou'" -ErrorAction SilentlyContinue)) {
             New-ADGroup -Name $ou -GroupScope Global -GroupCategory Security `
                 -Path "OU=$ou,$base"

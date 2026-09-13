@@ -25,10 +25,10 @@ reviewed in Git, and handed to a teammate.
 corp.lab  (new forest, functional level 2016+)
 ├── Domain Controller  →  AD DS + DNS (static 10.10.10.10)
 ├── DHCP               →  scope 10.10.10.100-200, router + DNS options
-├── OUs                →  IT · HR · Finance · Servers · Workstations
-├── Security groups    →  IT · HR · Finance  (+ demo users, auto-placed)
+├── OUs                →  Infrastructure · Applications · Servers · Workstations
+├── Security groups    →  Infrastructure · Applications  (users auto-placed)
 ├── Group Policy       →  password/lockout baseline + workstation standard
-└── File Server        →  per-department shares, least-privilege NTFS/SMB
+└── File Server        →  per-team shares, least-privilege NTFS/SMB
 ```
 
 ![Architecture](docs/architecture.png)
